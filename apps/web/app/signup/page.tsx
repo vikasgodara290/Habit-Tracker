@@ -1,16 +1,28 @@
+'use client'
+
+import Input from "@repo/ui/input";
+import Button from "@repo/ui/button";
+import { useRef } from "react";
 
 export default function Home(){
+
+    const userNameRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+
+    const handleSignUp = () => {
+        
+    }
 
     return (
         <div className="">
             <div className="">
-                <input type="text" />
+                <Input type="text" ref={userNameRef}/>
             </div>
             <div className="">
-                <input type="password" />
+                <Input type="password" ref={passwordRef}/>
             </div>
             <div className="">
-                <button>Sign up to Habit Tracker</button>
+                <Button text="Sign Up To Habit Tracker" onclick={handleSignUp}/>
             </div>
         </div>
     )
